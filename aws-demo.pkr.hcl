@@ -29,6 +29,8 @@ source "amazon-ebs" "ubuntu_java" {
     most_recent = true
     owners      = ["099720109477"]
   }
+  vpc_id = vpc-035035179a8c733f1
+  subnet_id = subnet-0e7c2fc7dd0ab4093
   ssh_username = "ubuntu"
 }
 
