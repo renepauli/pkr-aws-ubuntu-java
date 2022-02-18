@@ -33,6 +33,7 @@ source "amazon-ebs" "ubuntu_java" {
     }
   }
   ssh_username = "ubuntu"
+  ssh_interface = "public_ip"
 }
 
 build {
