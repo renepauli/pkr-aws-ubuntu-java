@@ -38,6 +38,7 @@ source "amazon-ebs" "ubuntu_java" {
     filters = {
       "tag:Class": "runners"
     }
+  }
   ssh_username = "ubuntu"
 }
 
