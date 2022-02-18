@@ -21,6 +21,7 @@ source "amazon-ebs" "ubuntu_java" {
   source_ami    = "ami-0a5b876f0c0ac51b0"
   instance_type = "t2.micro"
   region        = "eu-central-1"
+  associate_public_ip_address = true
   encrypt_boot  = true
   vpc_filter {
     filters = {
