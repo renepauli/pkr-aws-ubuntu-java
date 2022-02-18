@@ -31,9 +31,13 @@ source "amazon-ebs" "ubuntu_java" {
   }
   vpc_filter {
     filters = {
-      "tag:Name": "ghes-runners"
+      "tag:Class": "runners"
     }
   }
+  subnet_filter {
+    filters = {
+      "tag:Class": "runners"
+    }
   ssh_username = "ubuntu"
 }
 
