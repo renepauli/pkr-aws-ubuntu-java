@@ -17,20 +17,12 @@ locals {
 }
 
 source "amazon-ebs" "ubuntu_java" {
-  ami_name      = "${var.ami_prefix}-${local.timestamp}"
-  source_ami_filter {
-    filters = {
-      name                = "ubuntu/images/*ubuntu-xenial-16.04-amd64-server-*"
-      root-device-type    = "ebs"
-      virtualization-type = "hvm"
-    }
-    most_recent = true
-    owners      = ["099720109477"]
-  }
+  ami_name = "${var.ami_prefix}-${local.timestamp}"
+  source_ami = "ami-0a5b876f0c0ac51b0"
   instance_type = "t2.micro"
-  region        = "eu-central-1"
+  region = "eu-central-1"
   associate_public_ip_address = true
-  encrypt_boot  = true
+  encrypt_boot = true
   vpc_filter {
     filters = {
       "tag:Class": "runners"
