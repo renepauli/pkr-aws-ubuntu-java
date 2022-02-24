@@ -12,6 +12,11 @@ variable "ami_prefix" {
   default = "runner-ubuntu"
 }
 
+variable "image_folder" {
+  type    = string
+  default = "/imagegeneration"
+}
+
 locals {
   timestamp = regex_replace(timestamp(), "[- TZ:]", "")
 }
