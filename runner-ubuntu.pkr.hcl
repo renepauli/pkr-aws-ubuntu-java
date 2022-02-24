@@ -23,7 +23,7 @@ locals {
 
 source "amazon-ebs" "ubuntu_runner" {
   ami_name = "${var.ami_prefix}-${local.timestamp}"
-  source_ami = "ami-0a5b876f0c0ac51b0"
+  source_ami = "ami-0e90768436805c374"
   instance_type = "t2.micro"
   region = "eu-central-1"
   associate_public_ip_address = true
