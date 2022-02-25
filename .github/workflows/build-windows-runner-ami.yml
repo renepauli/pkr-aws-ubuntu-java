@@ -5,9 +5,9 @@ name: Building Windows runner AMI
 on: workflow_dispatch
 
 jobs:
-  packer:
+  build_windows_ami:
     runs-on: ubuntu-latest
-    name: packer
+    name: build windows ami
 
     steps:
       - name: Checkout Repository
