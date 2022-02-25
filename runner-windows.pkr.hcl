@@ -27,7 +27,7 @@ source "amazon-ebs" "windows_runner" {
   instance_type = "t2.micro"
   region = "eu-central-1"
   associate_public_ip_address = true
-  encrypt_boot = true
+#  encrypt_boot = true
   vpc_filter {
     filters = {
       "tag:Class": "runners"
@@ -40,11 +40,10 @@ source "amazon-ebs" "windows_runner" {
   }
   user_data_file = "./winrm_bootstrap.txt"
   communicator = "winrm"
-  force_deregister = true
+ # force_deregister = true
   winrm_insecure = true
   winrm_password = "SuperS3cr3t!!!!"
   winrm_username = "Administrator"
-  winrm_use_ssl = true
 }
 
 build {
