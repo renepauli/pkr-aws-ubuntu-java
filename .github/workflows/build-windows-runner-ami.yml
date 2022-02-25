@@ -1,6 +1,6 @@
 ---
 
-name: Building Ubuntu runner AMI
+name: Building Windows runner AMI
 
 on: workflow_dispatch
 
