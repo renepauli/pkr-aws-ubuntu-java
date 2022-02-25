@@ -42,13 +42,12 @@ source "amazon-ebs" "windows_runner" {
   communicator = "winrm"
   force_deregister = true
   winrm_insecure = true
+  winrm_password = "SuperS3cr3t!!!!"
   winrm_username = "Administrator"
   winrm_use_ssl = true
 }
 
 build {
-  name    = "packer-windows"
-  sources = [
-    "source.amazon-ebs.windows_runner"
-  ]
+  name = "packer-windows"
+  sources = ["source.amazon-ebs.windows_runner"]
 }
