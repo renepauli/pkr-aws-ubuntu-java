@@ -24,7 +24,7 @@ locals {
 source "amazon-ebs" "windows_runner" {
   ami_name = "${var.ami_prefix}-${local.timestamp}"
   source_ami = "ami-058b8cd12848f8be8"
-  instance_type = "t2.micro"
+  instance_type = "t2.medium"
   region = "eu-central-1"
   associate_public_ip_address = true
 #  encrypt_boot = true
