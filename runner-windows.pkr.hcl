@@ -23,7 +23,7 @@ locals {
 
 source "amazon-ebs" "windows_runner" {
   ami_name = "${var.ami_prefix}-${local.timestamp}"
-  source_ami = "ami-07da315d4e55175ff"
+  source_ami = "ami-058b8cd12848f8be8"
   instance_type = "t2.micro"
   region = "eu-central-1"
   associate_public_ip_address = true
@@ -38,12 +38,11 @@ source "amazon-ebs" "windows_runner" {
       "tag:Class": "runners"
     }
   }
-  user_data_file = "./winrm_bootstrap.txt"
   communicator = "winrm"
- # force_deregister = true
+  force_deregister = true
   winrm_insecure = true
-  winrm_password = "SuperS3cr3t!!!!"
   winrm_username = "Administrator"
+  winrm_use_ssl = true
 }
 
 build {
